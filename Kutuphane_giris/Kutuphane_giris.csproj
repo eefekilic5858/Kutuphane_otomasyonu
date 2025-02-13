@@ -53,6 +53,7 @@
       <DependentUpon>Adminsayfasi.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Kisi.cs" />
+    <Compile Include="Entity\Kitap.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
