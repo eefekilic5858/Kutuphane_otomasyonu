@@ -14,6 +14,7 @@ namespace Kutuphane_giris
     public partial class Form1 : Form
     {
         List<Kisi> kisilerim = new List<Kisi>();
+
         public Form1()
         {
             InitializeComponent();
@@ -34,36 +35,41 @@ namespace Kutuphane_giris
 
         private void btn_giris_Click(object sender, EventArgs e)
         {
-            string kullaniciadi, sifre = "";
-            kullaniciadi = txt_kullaniciadi.Text;
-            sifre = txt_sifre.Text;
+            string kullaniciadi = txt_kullaniciadi.Text;
+            string sifre = txt_sifre.Text;
+            bool kontrol = false;
 
             foreach (Kisi kisi in kisilerim)
             {
-                if (kullaniciadi.ToLower() == kisi.getkullaniciadi() && sifre.ToLower() == kisi.getSifre() && kisi.getYetki() == "admin")
+                if (kullaniciadi.ToLower() == kisi.getkullaniciadi() && sifre.ToLower() == kisi.getSifre())
                 {
-                    Adminsayfasi adminssayfa = new Adminsayfasi();
-                    adminssayfa.Show();
+                    if (kisi.getYetki() == "admin")
+                    {
+                        Adminsayfasi adminssayfa = new Adminsayfasi(kisilerim);
+                        adminssayfa.Show();
+                    }
+                    else if (kisi.getYetki() == "uye")
+                    {
+                        Uyesayfasi uyesayfa = new Uyesayfasi();
+                        uyesayfa.Show();
+                    }
+
                     this.Hide();
+                    kontrol = true;
                     break;
                 }
-                else if (kullaniciadi.ToLower() == kisi.getkullaniciadi() && sifre.ToLower() == kisi.getSifre() && kisi.getYetki() == "uye")
-                {
-                    Uyesayfasi uyesayfa = new Uyesayfasi();
-                    uyesayfa.Show();
-                    this.Hide();
-                    break;
-                }
-                else
-                {
-                    MessageBox.Show("Bir hata oluştu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                break;
+            }
 
-
-
+            // Eğer hiçbir eşleşme bulunamazsa hata mesajı göster
+            if (!kontrol)
+            {
+                MessageBox.Show("Kullanıcı adı veya şifre hatalı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
 
+        private void txt_kullaniciadi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

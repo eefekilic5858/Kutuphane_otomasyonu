@@ -79,6 +79,7 @@
             this.txt_kullaniciadi.Name = "txt_kullaniciadi";
             this.txt_kullaniciadi.Size = new System.Drawing.Size(221, 31);
             this.txt_kullaniciadi.TabIndex = 0;
+            this.txt_kullaniciadi.TextChanged += new System.EventHandler(this.txt_kullaniciadi_TextChanged);
             // 
             // textBox2
             // 
@@ -124,8 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Kutuphane_giris.Properties.Resources.rfid_kutuphane_otomasyonu_kapak_1080x675;
-            this.ClientSize = new System.Drawing.Size(991, 416);
+            this.ClientSize = new System.Drawing.Size(987, 373);
             this.Controls.Add(this.btn_temizle);
             this.Controls.Add(this.btn_giris);
             this.Controls.Add(this.txt_sifre);

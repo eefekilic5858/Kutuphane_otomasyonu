@@ -67,6 +67,9 @@
     <Compile Include="Uyesayfasi.Designer.cs">
       <DependentUpon>Uyesayfasi.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adminsayfasi.resx">
+      <DependentUpon>Adminsayfasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
