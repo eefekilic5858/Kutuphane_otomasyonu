@@ -24,7 +24,7 @@ namespace Kutuphane_giris
         private void Form1_Load(object sender, EventArgs e)
         {
             kisilerim.Add(new Kisi(1, "Ahmet", "Yılmaz", DateTime.Now, "ahmet", "123", "admin"));
-            kisilerim.Add(new Kisi(2, "Efe", "Kılıç", DateTime.Now, "efe", "123", "uye"));
+            kisilerim.Add(new Kisi(2, "Efe", "Kılıç", DateTime.Now, "efe", "123", "admin"));
             kisilerim.Add(new Kisi(3, "Mehmet", "Yıldırım", DateTime.Now, "mehmet", "123", "uye"));
 
             kitaplarim.Add(new Kitap(3, "Kürk Mantolu Madonna", "Sabahattin Ali", "Türkçe", "Yapı Kredi Yayınları", "Roman", 194, 897, 2018));
